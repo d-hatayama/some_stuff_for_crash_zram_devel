@@ -2,7 +2,7 @@
 
 modprobe zram
 
-if ! ZRAM_DISK="$(zramctl -f -s 512M)"; then
+if ! ZRAM_DISK="$(zramctl -a lzo -f -s 512M)"; then
     echo "Failed to create zram disk" >&2
     exit 1
 fi
